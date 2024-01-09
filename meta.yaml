@@ -1,0 +1,21 @@
+package:
+  name: stranded-cable
+  version: "2023.1.0"
+about:
+  home: https://gitlab.eurobios.com/rte/stranded-cable
+  summary: stranded-cable is a python package proposed to evaluate stranded cables' physical characteristics.
+source:
+  fn: stranded-cable-sprint_remi.tar.gz
+  url: https://gitlab.eurobios.com/rte/stranded-cable/-/archive/sprint_remi/stranded-cable-sprint_remi.tar.gz
+  md5: "79dbf5d8c3f694d2ce990b31e42bffc8"
+
+requirements:
+  build:
+    - pip >=19
+    - python >=3.7
+  run:
+    - python >=3.7
+    - numpy >=1.19.4
+    - pandas >=1.1.4
+    - scipy >=1.5.4
+    - matplotlib >=3.7.1

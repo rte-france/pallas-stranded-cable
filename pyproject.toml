@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "stranded-cable"
+version = "2023.1.0"
+authors = [
+    {name = "Eurobios", email = "mgueguin@eurobios.com"},
+]
+description = "stranded-cable is a python package proposed to evaluate stranded cables' physical characteristics."
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "numpy >= 1.19.4",
+    "pandas >= 1.1.4",
+    "scipy >= 1.5.4",
+    "matplotlib >= 3.7.1",
+]
+
+[project.urls]
+"Homepage" = "https://gitlab.eurobios.com/rte/stranded-cable"
