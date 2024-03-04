@@ -7,11 +7,10 @@ _**stranded-cable**_ is a python package proposed to evaluate stranded cables' p
 ### Using pip
 To install the package using pip, execute the following command:
 ```shell script
-python -m pip install git+https://gitlab.eurobios.com/rte/stranded-cable
+python -m pip install https://github.com/rte-france/pallas-stranded-cable
 ```
 
-### Using conda
-(not available yet)
+### Using conda (not available yet)
 
 The package is available on conda-forge. To install, execute the following command: 
 ```shell script

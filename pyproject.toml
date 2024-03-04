@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "stranded-cable"
-version = "2023.1.0"
+version = "2024.1.0"
 authors = [
     {name = "Eurobios", email = "mgueguin@eurobios.com"},
 ]
