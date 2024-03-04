@@ -276,8 +276,8 @@ def test_StrandedCable_set_normative_lay_length():
         assert strandedcable.wirelengths is None
         assert strandedcable.layangles is None
         laylenghts = copy.deepcopy(strandedcable.laylengths)
-        strandedcable.set_normative_lay_length(cmin=1.0, cmax=2.0)
-        assert strandedcable.laylengths != laylenghts
+        strandedcable.set_normative_lay_length(cmin=0.5, cmax=0.5)
+        assert np.not_equal(strandedcable.laylengths, laylenghts).all()
     except Exception:
         assert False
 
@@ -308,7 +308,7 @@ def test_StrandedCable_approximate_axial_behaviour():
                                         compute_physics=True)
 
     try:
-        _, _ = strandedcable.approximate_axial_behaviour(epsround=4)
+        _, _, _ = strandedcable.approximate_axial_behaviour(epsround=4)
         assert True
     except Exception:
         assert False
@@ -379,7 +379,7 @@ def test_StrandedCable_copy():
 
     try:
         copied_cable = strandedcable.copy()
-        assert copied_cable is strandedcable
+        assert type(copied_cable) is cable.StrandedCable
     except Exception:
         assert False
 
