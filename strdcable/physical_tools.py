@@ -697,6 +697,8 @@ def approxim_axial_behavior(Aw: np.ndarray, nw: np.ndarray, layangles: np.ndarra
         Array of interval stiffness (N).
     FY : numpy.ndarray
         Array of interval yield force (N).
+    EP : numpy.ndarray
+        Array of deformations (no unit)
 
     """
     # internal strains inducing slopes change
@@ -705,22 +707,23 @@ def approxim_axial_behavior(Aw: np.ndarray, nw: np.ndarray, layangles: np.ndarra
     all_eps[-1] = epsmax
     all_eps = np.sort(np.unique(np.around(all_eps, epsround)))
 
-    F = np.zeros(len(all_eps))
-    for i, epscable in enumerate(all_eps):
-        F[i], _, _ = get_internal_forces(Aw, nw, layangles, epscable,
-                                         young, sigmay, hardening)
-
-    # evaluate slope for each force interval
-    ln = len(F)
-    A = np.ones((ln, ln)) * all_eps[0]
+    teps = np.zeros(len(young) + 1)
+    teps[:-1] = (sigmay / young) / (np.cos(layangles)**2)
+    teps[-1] = epsmax
+    unq, idx = np.unique(np.around(teps, epsround), return_inverse=True)
+    eps_c = np.sort([np.mean(teps[idx == i]) for i in np.unique(idx)])
+    eps_c = eps_c[eps_c != 0.0]
+    Fapprox = np.zeros(len(eps_c))
+    for i, epscable in enumerate(eps_c):
+        Fapprox[i], _, _ = get_internal_forces(Aw, nw, layangles, epscable, young, sigmay, hardening)
+    ln = len(Fapprox)
+    A = np.zeros((ln, ln))
+    A[:, 0] = eps_c[0]
     for i in range(1, ln):
-        A[i:, i:] = all_eps[i]
-    EA = solve(A, F)
-    FY = np.append(EA[:-1] * all_eps[:-1], [1.e18])
-
-    return EA, FY
-
-# %%
+        A[i:, i] = eps_c[i] - eps_c[i - 1]
+    EA = solve(A, Fapprox)
+    FY = np.cumsum(EA[:-1] * A[-1, :-1])
+    return EA, FY, eps_c[:-1]
 
 
 def power_dissipated_foti(ymax: Union[float, np.ndarray], freq: Union[float, np.ndarray],

@@ -297,7 +297,7 @@ class StrandedCable(object):
             default value is numpy.nan.
 
         """
-        return np.empty((2, self.nlayers)).fill(np.nan)
+        return np.full((2, self.nlayers), np.nan)
 
     def set_normative_lay_length(self,
                                  cmin: float = 0.5, cmax: float = 0.5) -> None:
@@ -370,6 +370,8 @@ class StrandedCable(object):
             Interval stiffness (N).
         numpy.ndarray
             Interval yield force (N).
+        numpy.ndarray
+            Interval deformation (no unit)
 
         """
         return mtls.approxim_axial_behavior(self.Awires, self.nbwires,
