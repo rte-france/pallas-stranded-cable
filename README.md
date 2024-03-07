@@ -86,4 +86,4 @@ The documentation can then be accessed from `doc/_build/html/index.html`.
 
 ## Acknowledgements
 
-_**stranded-cable**_ is developed by [Eurobios Mews](https://www.mews-partners.com/notre-offre/eurobios-mews-labs/) and supported by [Rte-R&D](https://www.rte-france.com/) _via_ the OLLA project (see [ResearchGate](https://www.researchgate.net/project/OLLA-overhead-lines-lifespan-assessment)).
+_**stranded-cable**_ is developed by [Eurobios Mews Labs](https://www.mews-partners.com/notre-offre/eurobios-mews-labs/) and supported by [Rte-R&D](https://www.rte-france.com/) _via_ the OLLA project (see [ResearchGate](https://www.researchgate.net/project/OLLA-overhead-lines-lifespan-assessment)).
