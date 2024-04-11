@@ -1,11 +1,17 @@
 Install
 =======
 
-If you have access to eurobios gitlab, just type ``pip install -e
-git+https://gitlab.eurobios.com/rte/stranded-cable``
-in a terminal; you will be asked your login credentials. If you got
-this packages from the sources, type ``pip install -e .`` at
-the root of the repository.
+The latest version of the package can be installed using pip with the following
+command::
+
+    python -m pip install https://github.com/rte-france/pallas-stranded-cable/archive/refs/heads/main.zip
+
+If you have the sources of the packages locally (through ``git clone`` or by
+other means), you can install it in the current Python environment by running
+the following command at the root of the repository::
+
+    pip install -e .
+
 
 Simple usage
 ============
