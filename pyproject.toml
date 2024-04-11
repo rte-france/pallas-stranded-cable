@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "stranded-cable"
 version = "2024.1.0"
 authors = [
-    {name = "Eurobios", email = "mgueguin@eurobios.com"},
+    {name = "Eurobios Mews Labs", email = "opentools@mews-labs.com"},
 ]
 description = "stranded-cable is a python package proposed to evaluate stranded cables' physical characteristics."
 readme = "README.md"
@@ -23,4 +23,4 @@ dependencies = [
 ]
 
 [project.urls]
-"Homepage" = "https://gitlab.eurobios.com/rte/stranded-cable"
+"Repository" = "https://github.com/rte-france/pallas-standed-cable"
