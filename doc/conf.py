@@ -16,8 +16,8 @@ sys.path.insert(0, os.path.abspath('../'))
 # -- Project information -----------------------------------------------------
 
 project = 'stranded cable'
-copyright = '2021, RTE'
-author = 'Eurobios'
+copyright = '2021-2024, RTE'
+author = 'Eurobios Mews Labs'
 
 # The full version, including alpha/beta/rc tags
 release = '0.0.0'

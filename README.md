@@ -7,39 +7,17 @@ _**stranded-cable**_ is a python package proposed to evaluate stranded cables' p
 ### Using pip
 To install the package using pip, execute the following command:
 ```shell script
-python -m pip install https://github.com/rte-france/pallas-stranded-cable
+python -m pip install https://github.com/rte-france/pallas-stranded-cable/archive/refs/heads/main.zip
 ```
 
+<!--
 ### Using conda (not available yet)
 
 The package is available on conda-forge. To install, execute the following command: 
 ```shell script
 python -m conda install stranded-cable -c conda-forge
 ```
-
-## Building the documentation
-
-First, make sure you have sphinx and the Readthedocs theme installed.
-
-If you use pip, open a terminal and enter the following commands:
-```shell script
-pip install sphinx
-pip install sphinx_rtd_theme
-```
-
-If you use conda, open an Anaconda Powershell Prompt and enter the following commands:
-```shell script
-conda install sphinx
-conda install sphinx_rtd_theme
-```
-
-Then, in the same terminal or anaconda prompt, build the doc with:
-```shell script
-cd doc
-make html
-```
-
-The documentation can then be accessed from `doc/_build/html/index.html`.
+-->
 
 ## Simple usage
 
@@ -51,17 +29,15 @@ already tabulated in the package.
 import numpy as np
 from strdcable.cable import Conductor
 
-cable_definition = dict(
+cable = Conductor(
     dwires=np.array([3e-3, 2e-3]),
     nbwires=np.array([1, 6]),
     material=np.array(['ST6C', 'AL1']),  # 'ST6C' is a grade of steel, 'AL1' is a grade of aluminium
     laylengths=np.array([np.nan, 0.2])
 )
-
-cable = Conductor(**cable_definition)
 ```
 
-The export method of the StrandedCable class allows exporting all of the cable's properties in a dataframe:
+The export method of the `StrandedCable` class allows exporting all of the cable's properties in a dataframe:
 ```python
 df = cable.export(format='dataframe')
 
@@ -71,7 +47,7 @@ df = cable.export(format='dataframe')
 1         6          0.002    68000000000        185000000
 ```
 
-Homogenized cable properties can be accessed directly from the StrandedCable object:
+Homogenized cable properties can be accessed directly from the `StrandedCable` object:
 ```python
 >>> cable.A
 2.5918139392115792e-05
@@ -86,6 +62,28 @@ Homogenized cable properties can be accessed directly from the StrandedCable obj
 1.6843561209162503e-05
 ```
 
+## Building the documentation
+
+First, make sure you have sphinx and the Readthedocs theme installed.
+
+If you use pip, open a terminal and enter the following commands:
+```shell script
+pip install sphinx sphinx_rtd_theme
+```
+
+If you use conda, open an Anaconda Powershell Prompt and enter the following commands:
+```shell script
+conda install sphinx sphinx_rtd_theme
+```
+
+Then, in the same terminal or anaconda prompt, build the doc with:
+```shell script
+cd doc
+make html
+```
+
+The documentation can then be accessed from `doc/_build/html/index.html`.
+
 ## Acknowledgements
 
-_**stranded-cable**_ is developed by [Eurobios](http://www.eurobios.com/) and supported by [Rte-R&D](https://www.rte-france.com/) _via_ the OLLA project (see [ResearchGate](https://www.researchgate.net/project/OLLA-overhead-lines-lifespan-assessment)).
+_**stranded-cable**_ is developed by [Eurobios Mews Labs](https://www.mews-partners.com/notre-offre/eurobios-mews-labs/) and supported by [Rte-R&D](https://www.rte-france.com/) _via_ the OLLA project (see [ResearchGate](https://www.researchgate.net/project/OLLA-overhead-lines-lifespan-assessment)).

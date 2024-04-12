@@ -1,4 +1,0 @@
-include strdcable/config.ini
-include strdcable/data/norm_OHL_EN_wires.csv
-include strdcable/data/cables_dataset.csv
-include strdcable/data/FLEXION_CARDINAL_H40kN_mu0.7_FOTI.csv

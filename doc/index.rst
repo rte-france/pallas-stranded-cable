@@ -13,7 +13,7 @@ cable-stayed bridges, mooring lines, overhead
 lines. **stranded-cable** can compute analytical and semi-analytical
 components of the cable's behaviour.
 
-**stranded-cable** is developed by `Eurobios <http://www.eurobios.com/>`_ and supported by `Rte-R&D <https://www.rte-france.com/>`_ *via* the OLLA project (see `ResearchGate <https://www.researchgate.net/project/OLLA-overhead-lines-lifespan-assessment>`_).
+**stranded-cable** is developed by `Eurobios Mews Labs <https://www.mews-partners.com/notre-offre/eurobios-mews-labs/>`_ and supported by `Rte-R&D <https://www.rte-france.com/>`_ *via* the OLLA project (see `ResearchGate <https://www.researchgate.net/project/OLLA-overhead-lines-lifespan-assessment>`_).
 
 
 .. toctree::
