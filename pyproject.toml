@@ -19,8 +19,12 @@ dependencies = [
     "numpy >= 1.19.4",
     "pandas >= 1.1.4",
     "scipy >= 1.5.4",
-    "matplotlib >= 3.7.1",
 ]
+
+[project.optional-dependencies]
+doc = ["sphinx", "sphinx_rtd_theme"]
+examples = ["matplotlib"]
+test = ["pytest", "pylint"]
 
 [tool.setuptools.package-data]
 strdcable = ["data/*.csv", "*.ini"]
